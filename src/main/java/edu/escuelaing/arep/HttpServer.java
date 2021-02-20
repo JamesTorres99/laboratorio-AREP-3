@@ -49,14 +49,14 @@ public class HttpServer {
 		   boolean pathRead = false;
 		   String path = "";
 		   while ((inputLine = in.readLine()) != null) {
-		     
+			 
 			   if (!pathRead) {
 		    	  path= inputLine.split( "")[1];
 		    	  System.out.println("path read: " + path);
 		    	  pathRead=true;
 		    	  
 		      }
-			   System.out.println("Recibí: " + inputLine);
+			   System.out.println("Recib: " + inputLine);
 		      if (!in.ready()) {break; }
 		   }	
 		   
