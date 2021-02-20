@@ -9,8 +9,9 @@
 Este taller presenta diferentes retos que loa ayudaran a explorar los conceptos de esquemas de nombres y de clientes y servicios. Adicionalmente, el taller le ayudará a explorar la arquitectura de las aplicaciones distribuidas sobre internet.
 
 ## Despliegue 
+[![CircleCI](https://circleci.com/gh/JamesTorres99/laboratorio-AREP-3.svg?style=svg)](https://circleci.com/gh/JamesTorres99/laboratorio-AREP-3)
 
-[![Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo1.jpg)
+![Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo1.jpg)
 
 
 **Compilar el proyecto con maven**
@@ -41,7 +42,10 @@ mvn javadoc:javadoc
 
 ## Pruebas 
 
-[![Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo1.jpg)
-[![Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo.jpg)
-[![Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/halo.jpg)
-[![Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/pagina.html)
+[Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo1.jpg)
+
+[Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo.jpg)
+
+[Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/halo.jpg)
+
+[Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/pagina.html)
