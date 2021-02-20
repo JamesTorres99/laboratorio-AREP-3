@@ -18,13 +18,26 @@ import java.net.Socket;
 
 import javax.imageio.ImageIO;
 
+/**
+ * Clase HTTPServer
+ * @author Alexander Torres
+ *
+ */
 public class HttpServerReto {
 	
 	String rutaa = "/src/main/resources/Img/";
+	
+	/**
+	 * Constructor de HttpServerReto
+	 */
 	public HttpServerReto() {
 		super();
 		}
 	
+	/**
+	 * Metodo StarServer que inicializa los sockets e inicia el servidor
+	 * @throws IOException excepcion de la clase ServerSocket
+	 */
 	public void startServer() throws IOException {
 		ServerSocket serverSocket = null;
 		   try { 
@@ -69,6 +82,12 @@ public class HttpServerReto {
 		    serverSocket.close(); 
 	}
 	
+	/**
+	 * Metodo que muestra el texto en la pagina
+	 * @param string la ruta donde encontraremos el archivo
+	 * @param outputStream metodo de salida 
+	 * @param tipo tipo de archivo
+	 */
 	private void mostrartexto(String string, OutputStream outputStream, String tipo) {
 		 try {
 			 System.out.println(System.getProperty("user.dir")+string);
@@ -90,6 +109,11 @@ public class HttpServerReto {
 		
 	}
 	
+	/**
+	 * Metodo MostrarImagen muestra la imagen en el servidor
+	 * @param string ruta de la imagen
+	 * @param outputStream metodo salida
+	 */
 	private void mostrarImagen(String string, OutputStream outputStream) {
 		  try {
 	            BufferedImage imagen = ImageIO.read(new File(System.getProperty("user.dir") + string));
@@ -105,6 +129,10 @@ public class HttpServerReto {
 	        }
 	}
 
+	/**
+	 * pagina httml 
+	 * @return html
+	 */
 	private String getDefaultokOutput() {
 		return "HTTP/1.1 200 OK\r\n"
 				  + "Content-Type: text/html\r\n"
@@ -119,10 +147,12 @@ public class HttpServerReto {
 		          "<h1>Mi propio mensaje</h1>\n" + 
 		          "</body>\n" + 
 		          "</html>\n"; 
-		   
-		
-		
 	}
+	
+	/**
+	 * metodo getPort que retorna el puerto a usar
+	 * @return el puerto
+	 */
 	private static int getPort() {
 		if (System.getenv("PORT") != null) {
 			return Integer.parseInt(System.getenv("PORT"));

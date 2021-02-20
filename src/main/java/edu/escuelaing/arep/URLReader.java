@@ -7,12 +7,26 @@ import java.net.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+/**
+ * clase URlReader permite obtener los encabezados de la pagina
+ * @author Alexander Torres
+ *
+ */
 public class URLReader {
 
+	/**
+	 *Constructor de la clase URLReader 
+	 */
 	public URLReader() {
 		super();
 	}
-
+	
+	/**
+	 * Clase main de la clase URLReader
+	 * @param args necesario para lanzar el main
+	 * @throws Exception exception de la clase urlConnection
+	 */
 	public static void main(String[] args) throws Exception {
 		String site= "http://localhost:35000/miotrositio/foto.png";
 		URL siteURL = new URL(site);
@@ -67,7 +81,7 @@ public class URLReader {
 	
 	/**
 	 * ejercicio 2 leyendo una url y guardando en html
-	 * @throws Exception
+	 * @throws Exception del ejercicio 2
 	 */
 	public static void ejer2() throws Exception {
 		URL google = new URL("https://www.hostingatope.com/como-hacer-una-pagina-web-con-html/"); //ejemplo con pagina al azar.

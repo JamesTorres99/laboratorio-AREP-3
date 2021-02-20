@@ -7,8 +7,18 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * Clase Client que realiza a las preguntas
+ * @author Alexander Torres
+ *
+ */
 public class Echo_Client {
 	
+	/**
+	 * Metodo main que ejecuta el serverSocket
+	 * @param args Necesario para ejecutar el main
+	 * @throws Exception de la clase Serversocket
+	 */
 	public static void main(String[] args) throws Exception {
 	Socket echoSocket = null;
 	PrintWriter out = null;

@@ -7,8 +7,18 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * Clase server que responde a las preguntas
+ * @author Alexander Torres
+ *
+ */
 public class Echo_server {
 
+	/**
+	 * Metodo main que ejecuta el serverSocket
+	 * @param args Necesario para ejecutar el main
+	 * @throws Exception de la clase Serversocket
+	 */
 	public static void main(String[] args) throws Exception {
 	ServerSocket serverSocket = null;
 	try {
