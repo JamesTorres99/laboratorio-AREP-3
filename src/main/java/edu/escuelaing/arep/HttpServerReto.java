@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
 
 public class HttpServerReto {
 	
-	String rutaa = "\\src\\main\\resources\\";
+	String rutaa = "/src/main/resources/Img/";
 	public HttpServerReto() {
 		super();
 		}
