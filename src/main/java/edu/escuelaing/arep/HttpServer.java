@@ -6,26 +6,24 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class HttpServer {
-
+	private Map<String, Handler<String>> handlers = new HashMap();
+	
 	public HttpServer() {
 		super();
 	}
 	
-	public  static void main(String [] args) {
+	public void registerHandler(Handler<String> h, String prefix) {
+		handlers.put(prefix,h);
 		
-		try {
-			HttpServer hserver = new HttpServer();
-			hserver.startServer();
-		} catch (IOException e) {
-			Logger.getLogger(HttpServer.class.getName()).log(Level.SEVERE,null,e);
-		}
 	}
 
-	private void startServer() throws IOException {
+	public void startServer() throws IOException {
 		ServerSocket serverSocket = null;
 		   try { 
 		      serverSocket = new ServerSocket(getPort());
@@ -48,11 +46,39 @@ public class HttpServer {
 		   BufferedReader in = new BufferedReader(
 		                         new InputStreamReader(clientSocket.getInputStream()));
 		   String inputLine, outputLine;
+		   boolean pathRead = false;
+		   String path = "";
 		   while ((inputLine = in.readLine()) != null) {
-		      System.out.println("Recibí: " + inputLine);
+		     
+			   if (!pathRead) {
+		    	  path= inputLine.split( "")[1];
+		    	  System.out.println("path read: " + path);
+		    	  pathRead=true;
+		    	  
+		      }
+			   System.out.println("Recibí: " + inputLine);
 		      if (!in.ready()) {break; }
+		   }	
+		   
+		   String prefix = "/Apps";
+		   String sufix = "/hello";
+		   if (handlers.containsKey(prefix)) {
+			   out.println(getDefaultokOutput() + handlers.get(prefix).handle(sufix,null,null));
 		   }
-		   outputLine ="HTTP/1.1 200 OK\r\n"
+		   else {
+			   out.println(getDefaultokOutput());
+		   }
+		   
+		    out.println(getDefaultokOutput());
+		    out.close(); 
+		    in.close(); 
+		    clientSocket.close();
+		   }
+		    serverSocket.close(); 
+	}
+	
+	private String getDefaultokOutput() {
+		return "HTTP/1.1 200 OK\r\n"
 				  + "Content-Type: text/html\r\n"
 				  + "\r\n"
 				  + "<!DOCTYPE html>\n" + 
@@ -65,14 +91,10 @@ public class HttpServer {
 		          "<h1>Mi propio mensaje</h1>\n" + 
 		          "</body>\n" + 
 		          "</html>\n"; 
-		    out.println(outputLine);
-		    out.close(); 
-		    in.close(); 
-		    clientSocket.close();
-		   }
-		    serverSocket.close(); 
+		   
+		
+		
 	}
-	
 	private int getPort() {
 		if (System.getenv("PORT") != null) {
 			return Integer.parseInt(System.getenv("PORT"));
