@@ -25,16 +25,6 @@ public class HttpServerReto {
 		super();
 		}
 	
-	public static void main(String[] args) {
-		try {
-			HttpServerReto hserver =new HttpServerReto();
-			hserver.startServer();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 	public void startServer() throws IOException {
 		ServerSocket serverSocket = null;
 		   try { 
