@@ -11,6 +11,8 @@ Este taller presenta diferentes retos que loa ayudaran a explorar los conceptos 
 ## Despliegue 
 [![CircleCI](https://circleci.com/gh/JamesTorres99/laboratorio-AREP-3.svg?style=svg)](https://circleci.com/gh/JamesTorres99/laboratorio-AREP-3)
 
+Enlace heroku
+
 ![Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo1.jpg)
 
 
@@ -18,20 +20,17 @@ Este taller presenta diferentes retos que loa ayudaran a explorar los conceptos 
 ```
 mvn package
 ```
-<br></br>
 
 **Ejecutar el proyecto con maven**
 ```
 java -cp target/classes;target/dependency/* edu.escuelaing.arep.Main
 
 ```
-<br></br>
 
 **Ejecutar pruebas del proyecto con maven**
 ```
 mvn test
 ```
-<br></br>
 
 **Obtener Documentacion del proyecto con maven**
 
@@ -42,10 +41,16 @@ mvn javadoc:javadoc
 
 ## Pruebas 
 
+prueba imagen 1:
 [Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo1.jpg)
 
+
+prueba imagen 2:
 [Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/fondo.jpg)
 
+
+prueba imagen 3:
 [Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/halo.jpg)
 
+Prueba pagina x:
 [Enlace Heroku](https://rocky-dusk-53191.herokuapp.com/pagina.html)
